@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="intranet" namespace="/intranet" extends="root">
+		
+	 	<action name="fichaServicioReport" class="cl.pitstop.util.fichaServicioReport" method="pdf">
+		 	<interceptor-ref name="loggerStack" />
+	        <result name="success" type="stream">
+			        <param name="inputName">inputStream</param>
+			        <param name="contentType">application/pdf</param>
+			        <param name="contentDisposition">attachment;filename="revision.pdf"</param>
+			        <param name="bufferSize">1024</param>
+			</result>
+      	</action> 
+		
+		<action name="reportVentaCotiza" class="cl.pitstop.util.ReportVentaCotiza" method="pdf">
+		 	<interceptor-ref name="loggerStack" />
+	        <result name="success" type="stream">
+			        <param name="inputName">inputStream</param>
+			        <param name="contentType">application/pdf</param>
+			        <param name="contentDisposition">attachment;filename="venta.pdf"</param>
+			        <param name="bufferSize">1024</param>
+			</result>
+	      </action> 
+		
+		<action name="Empleados" class="cl.pitstop.action.EmpleadoAction" method="listEmpleado">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="tiles">Empleados</result>
+		</action>
+		
+		
+		<!-- Clientes redirect -->
+		<action name="Ingresos" class="cl.pitstop.action.ClienteAction" method="ingresos">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="tiles">clienteMenu</result>
+		</action>
+		<action name="crearCliente" class="cl.pitstop.action.ClienteAction" method="crearCliente">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="redirect">/intranet/Ingresos</result>
+		</action>
+		
+		<action name="editarCliente" class="cl.pitstop.action.ClienteAction" method="editarCliente">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="redirect">/intranet/Ingresos</result>
+		</action>
+		
+		<action name="buscarClientePorRut" class="cl.pitstop.action.ClienteAction" method="buscarClientePorRut">
+   			<interceptor-ref name="loggerStack" />
+   			<result name="success" type="json"><param name="root">simpleErrors</param></result> 
+        </action>
+		
+		<!-- Vehiculos redirect -->
+		<action name="Vehiculos" class="cl.pitstop.action.ClienteAction" method="ingresos">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="tiles">vehiculoMenu</result>
+		</action>
+		
+		<action name="crearVehiculo" class="cl.pitstop.action.ClienteAction" method="crearVehiculo">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="redirect">/intranet/Vehiculos</result>
+		</action>
+		
+		<action name="editarVehiculo" class="cl.pitstop.action.ClienteAction" method="editarVehiculo">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="redirect">/intranet/Vehiculos</result>
+		</action>
+		
+		<action name="buscarVehiculoPorPatente" class="cl.pitstop.action.ClienteAction" method="buscarVehiculoPorPatente">
+   			<interceptor-ref name="loggerStack" />
+   			<result name="success" type="json"><param name="root">simpleErrors</param></result> 
+        </action>
+        
+		<!-- Revision redirect -->
+		<action name="Revisiones" class="cl.pitstop.action.ClienteAction" method="ingresos">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="tiles">revisionMenu</result>
+		</action>
+		
+		<action name="crearRevision" class="cl.pitstop.action.ClienteAction" method="crearRevision">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="redirect">/intranet/Revisiones</result>
+		</action>
+		
+		<action name="editarRevision" class="cl.pitstop.action.ClienteAction" method="editarRevision">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="redirect">/intranet/Revisiones</result>
+		</action>
+		
+		<!-- Otros redirect -->
+		<action name="VentaHisto" class="cl.pitstop.action.CotizacionAction" method="ventaHisto">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="tiles">historicaMenu</result>
+		</action>
+		
+		<action name="Menu" class="cl.pitstop.action.MenuAction" method="adminMenu">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="tiles">Menu</result>
+		</action>
+		
+		<action name="CambioPassword" class="cl.pitstop.action.MenuAction" method="adminMenu">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="tiles">cambioPass</result>
+		</action>
+		
+		<action name="CotizaMenu" class="cl.pitstop.action.CotizacionAction" method="CotizaMenu">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="tiles">CotizaMenu</result>
+		</action>
+		
+		 <action name="crearEmpleado" class="cl.pitstop.action.EmpleadoAction" method="crearEmpleado">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="redirect">/intranet/Empleados</result>
+		</action>
+		
+		<action name="creaUsuario" class="cl.pitstop.action.EmpleadoAction" method="creaUsuario">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="redirect">/intranet/Empleados</result>
+		</action>
+		
+		<action name="editarUsuario" class="cl.pitstop.action.EmpleadoAction" method="editarUsuario">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="redirect">/intranet/Empleados</result>
+		</action>
+		
+		 <action name="bloqueaEmpleado" class="cl.pitstop.action.EmpleadoAction" method="bloqueaEmpleado">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="redirect">/intranet/Empleados</result>
+		</action>
+		
+		 <action name="desbloqueaEmpleado" class="cl.pitstop.action.EmpleadoAction" method="desbloqueaEmpleado">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="redirect">/intranet/Empleados</result>
+		</action>
+		
+		<action name="updEmpleado" class="cl.pitstop.action.EmpleadoAction" method="updEmpleado">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="redirect">/intranet/Empleados</result>
+		</action>
+		
+		<action name="delEmpleado" class="cl.pitstop.action.EmpleadoAction" method="delEmpleado">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="redirect">/intranet/Empleados</result>
+		</action>
+		
+		<action name="Productos" class="cl.pitstop.action.ProductoAction" method="listProductos">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="tiles">Productos</result>
+		</action>
+		
+		<action name="crearProducto" class="cl.pitstop.action.ProductoAction" method="crearProducto">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="redirect">/intranet/Productos</result>
+		</action>
+		
+		<action name="editarProducto" class="cl.pitstop.action.ProductoAction" method="editarProducto">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="redirect">/intranet/Productos</result>
+		</action>
+		
+		<action name="Servicios" class="cl.pitstop.action.ServicioAction" method="listServicios">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="tiles">Servicios</result>
+		</action>
+		
+		<action name="Proveedores" class="cl.pitstop.action.ProveedoresAction" method="proveedores">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="tiles">Proveedores</result>
+		</action>
+		
+		<action name="crearProveedor" class="cl.pitstop.action.ProveedoresAction" method="crearProveedor">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="redirect">/intranet/Proveedores</result>
+		</action>
+		
+		<action name="udpProveedor" class="cl.pitstop.action.ProveedoresAction" method="updateProveedor">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="redirect">/intranet/Proveedores</result>
+		</action>
+		
+		<action name="crearServicio" class="cl.pitstop.action.ServicioAction" method="crearServicio">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="redirect">/intranet/Servicios</result>
+		</action>
+		
+		<action name="updServicio" class="cl.pitstop.action.ServicioAction" method="updServicio">
+			<interceptor-ref name="loggerStack" />
+			<result name="success" type="redirect">/intranet/Servicios</result>
+		</action>
+		
+		
+		<action name="login" class="cl.pitstop.action.LoginAction" method="login">
+			<interceptor-ref name="loggerStack" />
+			<result name="error">/login.jsp</result>
+			<result name="success" type="redirect">/intranet/Menu</result>
+		</action>
+		
+		<action name="logout" class="cl.pitstop.action.LoginAction" method="logout">
+        	<interceptor-ref name="loggerStack" />
+        	<result name="success">/login.jsp</result>
+        </action>
+        
+        <action name="ingresarVenta" class="cl.pitstop.action.CotizacionAction" method="ingresarVenta">
+   			<interceptor-ref name="loggerStack" />
+   			<result name="success" type="json"><param name="root">simpleErrors</param></result> 
+        </action>
+	
+
+	</package>
+
+</struts>

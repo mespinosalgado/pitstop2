@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ingresoVehiculo" pageWidth="612" pageHeight="792" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8c9e6e54-f708-43f9-9a01-0b0d7c12fc94">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="numeroFicha" class="java.lang.String"/>
+	<parameter name="fecha" class="java.lang.String"/>
+	<parameter name="nombreCliente" class="java.lang.String"/>
+	<parameter name="precio" class="java.lang.String"/>
+	<parameter name="correoCliente" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="mecanicoNombre" class="java.lang.String"/>
+	<parameter name="patente" class="java.lang.String"/>
+	<parameter name="marca" class="java.lang.String"/>
+	<parameter name="modelo" class="java.lang.String"/>
+	<parameter name="totalVenta" class="java.lang.String"/>
+	<parameter name="kilometros" class="java.lang.String"/>
+	<parameter name="observacion" class="java.lang.String"/>
+	<parameter name="formaPago" class="java.lang.String"/>
+	<parameter name="cantidad" class="java.lang.String"/>
+	<parameter name="productoServicio" class="java.lang.String"/>
+	<parameter name="total" class="java.lang.String"/>
+	<parameter name="id" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="uriLogo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     *,
+     venta_producto.`cantidad` AS venta_producto_cantidad,
+     venta_servicio.`cantidad` AS venta_servicio_cantidad,
+     servicio.`nombre_servicio` AS servicio_nombre_servicio,
+     producto.`codigo` AS producto_codigo,
+     producto.`tipo_prod` AS producto_tipo_prod,
+     producto.`valor` AS producto_valor,
+     servicio.`valor_servicio` AS servicio_valor_servicio,
+     venta.`id` AS venta_id,
+     venta.`id_cliente` AS venta_id_cliente,
+     venta.`tipo` AS venta_tipo,
+     venta.`fecha_venta` AS venta_fecha_venta,
+     venta.`valor_total` AS venta_valor_total,
+     venta.`observacion` AS venta_observacion,
+     venta.`tipo_pago` AS venta_tipo_pago
+FROM
+     `venta` venta INNER JOIN `venta_producto` venta_producto ON venta.`id` = venta_producto.`id_venta`
+     INNER JOIN `venta_servicio` venta_servicio ON venta.`id` = venta_servicio.`id_venta`
+     INNER JOIN `servicio` servicio ON venta_servicio.`id_servicio` = servicio.`id`,
+     `producto` producto
+
+where venta.`id` = $P{id}]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_cliente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_venta" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valor_total" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="observacion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo_pago" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_venta" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_producto" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cantidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_servicio" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre_servicio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valor_servicio" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_proveedor" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_sucursal" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo_prod" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valor" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stock" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="venta_producto_cantidad" class="java.lang.Integer"/>
+	<field name="venta_servicio_cantidad" class="java.lang.Integer"/>
+	<field name="servicio_nombre_servicio" class="java.lang.String"/>
+	<field name="producto_codigo" class="java.lang.String"/>
+	<field name="producto_tipo_prod" class="java.lang.String"/>
+	<field name="producto_valor" class="java.lang.Integer"/>
+	<field name="servicio_valor_servicio" class="java.lang.Integer"/>
+	<field name="venta_id" class="java.lang.Integer"/>
+	<field name="venta_id_cliente" class="java.lang.Integer"/>
+	<field name="venta_tipo" class="java.lang.String"/>
+	<field name="venta_fecha_venta" class="java.lang.String"/>
+	<field name="venta_valor_total" class="java.lang.Integer"/>
+	<field name="venta_observacion" class="java.lang.String"/>
+	<field name="venta_tipo_pago" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="152">
+			<rectangle>
+				<reportElement x="360" y="5" width="195" height="83" forecolor="#FF3333" uuid="22476e70-d28f-466a-b49e-24bee16f772d"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="431" y="45" width="110" height="20" uuid="69e98dd9-a5e7-40d9-a761-d33df6ae5b86"/>
+				<textFieldExpression><![CDATA[$P{fecha}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="373" y="45" width="58" height="20" uuid="4209a5ec-c747-4bd0-b3ab-9326116a4020"/>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="401" y="5" width="100" height="20" uuid="18b3f3d0-fd8b-410e-943e-d7f35410fda7"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[RUT: 76328637-1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="25" width="185" height="20" uuid="ee168dd4-1656-452d-a991-0ba6bb013f47"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[GUÍA DE ATENCIÓN AL CLIENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="373" y="65" width="58" height="20" uuid="297748e4-8566-40eb-82e2-d5a002459e80"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="431" y="65" width="110" height="20" uuid="c32f7b53-294a-4857-a2b1-fa78097fa1bc"/>
+				<textFieldExpression><![CDATA[$P{id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="21" y="55" width="166" height="30" uuid="c0fd320d-c59b-4f9b-a718-cc9b75fe1bb1"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Av. Nueva San Martín 409, Maipú]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="35" y="68" width="121" height="20" uuid="4c227826-58e1-4060-9baa-d06694028858"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[www.pitstopchile.com]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="85" width="142" height="20" uuid="c2ce6a0b-34d5-485b-8472-051a7a848126"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Telefono: 2 848 42  86]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="105" width="156" height="20" uuid="a63721d7-9203-4b6a-9e37-1571125ab2f8"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[contacto@pitstopchile.com]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="419" y="105" width="100" height="20" uuid="acccebd9-9895-4363-ac46-4f857c28f35b"/>
+				<textFieldExpression><![CDATA[$F{tipo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="47">
+			<textField>
+				<reportElement x="89" y="0" width="100" height="20" uuid="84f988ef-ef38-431a-a3e8-196978ef9cb7"/>
+				<textFieldExpression><![CDATA[$F{venta_tipo_pago}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="21" y="0" width="68" height="20" uuid="181f61ce-9594-4119-96fa-3d94c3513919"/>
+				<text><![CDATA[Tipo Pago:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="20" width="100" height="20" uuid="83f1022d-df41-4334-999a-fc9f1c2727a7"/>
+				<text><![CDATA[Servicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="163" y="20" width="85" height="20" uuid="eda6407c-9014-4f2c-9e2e-9cad7e97e6d5"/>
+				<text><![CDATA[Valor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="285" y="20" width="100" height="20" uuid="5f14e596-c955-4062-87c2-54f98f501b1f"/>
+				<text><![CDATA[Producto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="419" y="20" width="52" height="20" uuid="6a83bc39-bc22-4187-abe6-40539b6f4f07"/>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="489" y="20" width="52" height="20" uuid="f1c0b979-64c0-48b1-bdf5-be3424e07ec8"/>
+				<text><![CDATA[Valor]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33">
+			<staticText>
+				<reportElement x="161" y="0" width="10" height="20" uuid="77af8420-9d57-448f-bee2-d2748606118f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[$]]></text>
+			</staticText>
+			<line>
+				<reportElement x="175" y="23" width="85" height="1" uuid="883c0faa-b9b3-4f9b-86b8-3051c47e0589"/>
+			</line>
+			<textField>
+				<reportElement x="419" y="0" width="52" height="20" uuid="4d67d3d8-3428-4703-8b12-74368c20ab9e"/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="21" y="0" width="135" height="20" uuid="38f0002e-eebf-40b5-97e2-ac79570bc53d"/>
+				<textFieldExpression><![CDATA[$F{nombre_servicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="175" y="0" width="100" height="20" uuid="1842ba2c-6a0e-4c61-9d17-1cbaf882ac5b"/>
+				<textFieldExpression><![CDATA[$F{valor_servicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="0" width="134" height="20" uuid="a4dd625d-aecc-4627-8fde-bed4c97130e8"/>
+				<textFieldExpression><![CDATA[$F{producto_tipo_prod}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="499" y="22" width="52" height="1" uuid="114f578b-99a1-4a87-a7ee-d7004664846f"/>
+			</line>
+			<textField>
+				<reportElement x="499" y="3" width="36" height="20" uuid="bfd39b8e-598b-4788-ad7d-3d9a62ed0273"/>
+				<textFieldExpression><![CDATA[$F{producto_valor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="489" y="3" width="10" height="20" uuid="cf83286c-5716-4f20-9866-fa8c55ecdb05"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[$]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="81">
+			<textField>
+				<reportElement x="11" y="24" width="440" height="41" uuid="174bc469-0d51-4e62-be94-79c28db0ae81"/>
+				<textFieldExpression><![CDATA[$P{observacion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="131"/>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class name="cl.pitstop.pojos.Cotizacion" lazy="true"
+		dynamic-update="true" select-before-update="true" dynamic-insert="true"
+		table="cotizacion">
+		<id name="id" column="id">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="revision" class="cl.pitstop.pojos.Revision" fetch="select">
+            <column name="id_revision" precision="8" scale="0">
+                <comment>id revision</comment>
+            </column>
+        </many-to-one>
+		<many-to-one name="servicio" class="cl.pitstop.pojos.Servicio" fetch="select">
+            <column name="id_servicio" precision="8" scale="0">
+                <comment>id servicio</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="producto" class="cl.pitstop.pojos.Producto" fetch="select">
+            <column name="id_producto" precision="8" scale="0">
+                <comment>id producto</comment>
+            </column>
+        </many-to-one>
+		<property name="observacion" column="observacion" />
+		<property name="aprobacion" column="aprobacion" />
+		<property name="fecha" column="fecha" />
+		<property name="valor" column="valor" />
+		<property name="cantProd" column="cant_prod" />
+		<property name="cantServ" column="cant_serv" />
+		
+
+	</class>
+</hibernate-mapping>

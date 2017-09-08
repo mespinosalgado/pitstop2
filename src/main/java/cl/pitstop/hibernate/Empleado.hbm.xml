@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class name="cl.pitstop.pojos.Empleado" lazy="true"
+		dynamic-update="true" select-before-update="true" dynamic-insert="true"
+		table="empleado">
+		<id name="id" column="id">
+			<generator class="identity" />
+		</id>
+
+		<many-to-one name="sucursal" class="cl.pitstop.pojos.Sucursal" fetch="select">
+            <column name="id_sucursal" precision="8" scale="0">
+                <comment>id sucursal</comment>
+            </column>
+        </many-to-one>
+		<property name="rut" unique="true" column="rut" />
+		<property name="direccion" column="direccion" />
+		<property name="cargo" column="cargo" />
+		<property name="nombre" column="nombre" />
+		<property name="apellidos" column="apellidos" />
+		<property name="celular" column="celular" />
+		<property name="jornada" column="jornada" />
+		<property name="correo" column="correo" />
+		<property name="estado" column="estado" />
+
+	</class>
+</hibernate-mapping>

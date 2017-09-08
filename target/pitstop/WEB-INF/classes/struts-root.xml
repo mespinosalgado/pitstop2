@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	 
+<struts>
+	
+<package name="root" abstract="true"  extends="struts-default,json-default">
+	<result-types>
+           <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
+            <result-type name="jasper" class="org.apache.struts2.views.jasperreports.JasperReportsResult"/>
+   </result-types>
+   
+   
+		<interceptors>
+		    <interceptor name="loggerInterceptor"
+		        class="cl.pitstop.util.ApplicationLogger">
+		    </interceptor>
+		    <interceptor-stack name="loggerStack">
+		        <interceptor-ref name="loggerInterceptor" />
+		        <interceptor-ref name="defaultStack" />
+		    </interceptor-stack>
+		    <interceptor-stack name="appDefaultStack">
+			    <interceptor-ref name="defaultStack">
+			     <param name="exception.logEnabled">true</param>
+			     <param name="exception.logLevel">ERROR</param>
+			    </interceptor-ref>
+			 </interceptor-stack>
+		</interceptors>
+		
+		<default-interceptor-ref name="appDefaultStack" />
+		
+		<global-exception-mappings>
+		    <exception-mapping exception="java.lang.Exception" result="exception"></exception-mapping>
+		    <exception-mapping exception="java.lang.Error" result="error"></exception-mapping>
+		    <exception-mapping exception="java.lang.RuntimeException" result="runtime_exception"></exception-mapping>
+		</global-exception-mappings>
+
+</package>
+
+</struts>

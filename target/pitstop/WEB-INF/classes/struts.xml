@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+   <constant name="struts.custom.i18n.resources" value="global" />
+        <constant name="struts.devMode" value="false" />
+        <constant name="struts.enable.SlashesInActionNames" value="true"/>
+        <!-- constant name="struts.action.extension" value="action"/> -->
+        
+        <constant name="struts.action.extension" value=","/> 
+       
+        
+        <constant name="struts.action.excludePattern" value="/pages/.,/resources/.,/resources/img/.,/js/.,/css/.*"/>
+       
+       <include file="struts-root.xml"></include>
+       <include file="struts-admin.xml"></include>
+       
+</struts>

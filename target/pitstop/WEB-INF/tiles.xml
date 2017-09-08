@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+      "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+      "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<!-- SELECCION DE MODULO -->
+	<!-- <definition name="systemSelect" template="//pages/layouts/SimpleLayout.jsp"> 
+		<put-attribute name="tabContent" value="//pages/help/SystemSelect.jsp"/> </definition> -->
+
+	<definition name="mytemplate" template="//pages/mytemplate.jsp">
+		<put-attribute name="title" value="Template" />
+	</definition>
+	
+	<definition name="loginTemplate" template="/pages/loginTemplate.jsp">
+		<put-attribute name="title" value="Template" />
+	</definition>
+
+	<definition name="Empleados" extends="mytemplate">
+		<put-attribute name="content" value="/pages/empleado.jsp" />
+	</definition>
+	
+	<definition name="crearEmpleado" extends="mytemplate">
+		<put-attribute name="content" value="/pages/empleado.jsp" />
+	</definition>
+	
+	<definition name="updEmpleado" extends="mytemplate">
+		<put-attribute name="content" value="/pages/empleado.jsp" />
+	</definition>
+	
+	<definition name="Productos" extends="mytemplate">
+		<put-attribute name="content" value="/pages/producto.jsp" />
+	</definition>
+	
+	<definition name="crearProducto" extends="mytemplate">
+		<put-attribute name="content" value="/pages/producto.jsp" />
+	</definition>
+	
+	<definition name="Proveedores" extends="mytemplate">
+		<put-attribute name="content" value="/pages/proveedor.jsp" />
+	</definition>
+	
+	<definition name="Servicios" extends="mytemplate">
+		<put-attribute name="content" value="/pages/servicio.jsp" />
+	</definition>
+	
+	<definition name="crearServicio" extends="mytemplate">
+		<put-attribute name="content" value="/pages/servicio.jsp" />
+	</definition>
+	
+	<definition name="clienteMenu" extends="mytemplate">
+		<put-attribute name="content" value="/pages/registroCliente.jsp" />
+	</definition> 
+	
+	<definition name="crearCliente" extends="mytemplate">
+		<put-attribute name="content" value="/pages/registroCliente.jsp" />
+	</definition>
+	
+	<definition name="vehiculoMenu" extends="mytemplate">
+		<put-attribute name="content" value="/pages/registroVehiculo.jsp" />
+	</definition>
+	
+	<definition name="crearVehiculo" extends="mytemplate">
+		<put-attribute name="content" value="/pages/registroCliente.jsp" />
+	</definition>
+	
+	<definition name="revisionMenu" extends="mytemplate">
+		<put-attribute name="content" value="/pages/registroRevision.jsp" />
+	</definition>
+	
+	<definition name="historicaMenu" extends="mytemplate">
+		<put-attribute name="content" value="/pages/VentaHistorica.jsp" />
+	</definition> 
+	
+	<definition name="login" extends="loginTemplate">
+		<put-attribute name="content" value="/login.jsp" />
+	</definition>
+	
+	<definition name="Menu" extends="mytemplate">
+		<put-attribute name="content" value="/pages/Menu.jsp" />
+	</definition>
+	
+	<definition name="cambioPass" extends="mytemplate">
+		<put-attribute name="content" value="/pages/cambiarContrasena.jsp" />
+	</definition>
+	
+	<definition name="CotizaMenu" extends="mytemplate">
+		<put-attribute name="content" value="/pages/venta.jsp" />
+	</definition>
+	
+	
+
+
+</tiles-definitions>
+ 

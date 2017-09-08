@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+       default-cascade="none" default-lazy="true">
+       <class name="cl.pitstop.pojos.Sucursal" lazy="true"
+               dynamic-update="true" select-before-update="true" dynamic-insert="true"
+               table="sucursal">
+               <id name="id" column="id">
+                       <generator class="identity" />
+               </id>
+               <property name="direccion" column="direccion" />
+               <property name="nombreSucursal" column="nombre_sucursal" />
+
+       </class>
+</hibernate-mapping>

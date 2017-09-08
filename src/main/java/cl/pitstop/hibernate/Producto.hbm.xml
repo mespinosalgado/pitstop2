@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class name="cl.pitstop.pojos.Producto" lazy="true"
+		dynamic-update="true" select-before-update="true" dynamic-insert="true"
+		table="producto">
+		<id name="id" column="id">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="proveedor" class="cl.pitstop.pojos.Proveedor" fetch="select">
+            <column name="id_proveedor" precision="8" scale="0">
+                <comment>id proveedor</comment>
+            </column>
+        </many-to-one>
+		<many-to-one name="sucursal" class="cl.pitstop.pojos.Sucursal" fetch="select">
+            <column name="id_sucursal" precision="8" scale="0">
+                <comment>id sucursal</comment>
+            </column>
+        </many-to-one>
+		<property name="codigo" unique="true" column="codigo" />
+		<property name="descripcion" column="descripcion" />
+		<property name="tipoProd" column="tipo_prod" />
+		<property name="valor" column="valor" />
+		<property name="stock" column="stock" />
+	</class>
+</hibernate-mapping>

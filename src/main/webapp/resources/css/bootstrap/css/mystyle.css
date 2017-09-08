@@ -1,0 +1,104 @@
+@CHARSET "ISO-8859-1";
+
+
+p{
+	padding: 0px;
+	margin: 3px 0px;
+}
+
+
+i{
+	margin-right: 5px;
+}
+
+form, form button, span{
+	margin-top: 20px;
+}
+
+form{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+
+.form-horizontal .controls {
+margin-left: 110px;
+}
+
+
+.form-horizontal .form-actions {
+padding-left: 110px;
+}
+
+.form-actions {
+padding: 5px 20px 5px;
+background:transparent;
+border-top:0px;
+}
+
+a.btn, .btn{
+	font-size: 11px !important;
+}
+
+.well hr{
+	border-top:1px solid #2d2d2d;
+	border-bottom: 1px solid #5e5e5e;
+}
+
+/* Well */
+
+.well{
+	background: #313942;
+	border: 1px solid #141414;
+	box-shadow: inset 0px 0px 5px #141414 !important;
+}
+
+
+/* Login & Register */
+
+.login-register{
+	margin: 100px auto;
+	padding: 20px 30px;
+	max-width: 350px;
+}
+
+/* Footer */
+
+footer{
+	position: absolute;	
+	bottom: 0;
+	width: 100%;
+	line-height: 50px;
+	background: #222222;
+	text-align: center;
+}
+
+/* Responsive */
+
+
+@media (max-width: 480px){
+   .col-l{
+	   	width: 100%;
+	   	float: none;
+	   	margin: 10px 0px 5px 0px;
+   }
+   .col-r{
+	   	width: 100%;	
+	   	float: none;
+	   	margin: 10px 0px 5px 0px;
+   }	
+	.image-overlay .image-big-text{
+		font-size: 18px !important;
+		line-height: 23px !important;
+		padding-top: 20px !important;
+	}
+	.image-overlay .image-small-text{
+		font-size: 13px !important;
+		line-height: 18px !important;
+		padding-top: 5px;
+	}
+}
+
+.form-group {
+	margin-bottom: 20px;
+}

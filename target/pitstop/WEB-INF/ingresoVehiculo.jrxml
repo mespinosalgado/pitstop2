@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ingresoVehiculo" pageWidth="612" pageHeight="792" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8c9e6e54-f708-43f9-9a01-0b0d7c12fc94">
+	<property name="ireport.zoom" value="1.3310000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="278"/>
+	<parameter name="numeroFicha" class="java.lang.String"/>
+	<parameter name="fecha" class="java.lang.String"/>
+	<parameter name="nombreCliente" class="java.lang.String"/>
+	<parameter name="telefonoCliente" class="java.lang.String"/>
+	<parameter name="correoCliente" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="mecanicoNombre" class="java.lang.String"/>
+	<parameter name="patente" class="java.lang.String"/>
+	<parameter name="marca" class="java.lang.String"/>
+	<parameter name="modelo" class="java.lang.String"/>
+	<parameter name="anio" class="java.lang.String"/>
+	<parameter name="kilometros" class="java.lang.String"/>
+	<parameter name="observacion" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="752">
+			<image>
+				<reportElement x="0" y="0" width="572" height="752" uuid="7a8908cd-508f-4f3a-89f4-33c2c333d269"/>
+				<imageExpression><![CDATA["http://localhost:8080/pitstop/resources/img/reporteSolicitud.jpg"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="391" y="78" width="54" height="20" uuid="b91c8826-e660-4ac8-a305-5c9b3b2a5cf8"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{numeroFicha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="376" y="94" width="110" height="20" uuid="69e98dd9-a5e7-40d9-a761-d33df6ae5b86"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="91" y="189" width="186" height="20" uuid="501a7c56-b329-4b6d-b236-e755ebcea729"/>
+				<textFieldExpression><![CDATA[$P{nombreCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="94" y="222" width="185" height="20" uuid="48720c8c-0a03-4ecd-b1a4-0768a9413a44"/>
+				<textFieldExpression><![CDATA[$P{telefonoCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="83" y="254" width="197" height="20" uuid="8b872f7f-3514-494c-b49f-7ff7b4aed8e0"/>
+				<textFieldExpression><![CDATA[$P{correoCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="42" y="320" width="235" height="20" uuid="69fe9366-14da-41c0-b0a1-10abd5bd8fc8"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{mecanicoNombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="386" y="189" width="100" height="20" uuid="d3f59b89-afaa-4a8d-92f0-35a061dbb594"/>
+				<textFieldExpression><![CDATA[$P{patente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="376" y="222" width="100" height="20" uuid="e9009348-ec51-4401-a067-6ee24d870578"/>
+				<textFieldExpression><![CDATA[$P{marca}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="386" y="254" width="100" height="20" uuid="95865cfe-030d-45a3-a9e1-77f7ee4bdbb0"/>
+				<textFieldExpression><![CDATA[$P{modelo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="364" y="286" width="122" height="20" uuid="2e2de791-d4a9-4643-b501-48c9bdd6e3e6"/>
+				<textFieldExpression><![CDATA[$P{anio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="359" y="319" width="127" height="20" uuid="42ebbcee-838e-4cb4-ba29-0efe76f09796"/>
+				<textFieldExpression><![CDATA[$P{kilometros}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="53" y="387" width="468" height="145" uuid="174bc469-0d51-4e62-be94-79c28db0ae81"/>
+				<textFieldExpression><![CDATA[$P{observacion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+</jasperReport>

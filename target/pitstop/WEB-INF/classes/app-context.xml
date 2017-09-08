@@ -1,0 +1,162 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+	
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+    ">
+	
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="ignoreUnresolvablePlaceholders">
+			<value>true</value>
+		</property>
+		<property name="locations">
+			<list>
+				<value>classpath:pitstop.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	 <bean id="log4jInitialization" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+        <property name="targetClass" value="org.springframework.util.Log4jConfigurer" />
+        <property name="targetMethod" value="initLogging" />
+        <property name="arguments">  
+            <list>  
+          		<value>classpath:log4j.properties</value>
+            </list>  
+        </property>  
+    </bean>
+	
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${hibernate.driver}" />
+
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.user}" />
+		<property name="password" value="${jdbc.pass}" />
+
+		<property name="preferredTestQuery" value="${hibernate.preferredTestQuery}" />
+		<!-- these are C3P0 properties -->
+		<property name="acquireIncrement" value="${c3p0.acquireIncrement}" />
+		<property name="acquireRetryAttempts" value="${c3p0.acquireRetryAttempts}" />
+		<property name="acquireRetryDelay" value="${c3p0.acquireRetryDelay}" />
+		<property name="initialPoolSize" value="${c3p0.initialPoolSize}" />
+		<property name="minPoolSize" value="${c3p0.minPoolSize}" />
+		<property name="maxPoolSize" value="${c3p0.maxPoolSize}" />
+		<property name="maxIdleTime" value="${c3p0.maxIdleTime}" />
+		<property name="autoCommitOnClose" value="${c3p0.autoCommitOnClose}" />
+		<property name="breakAfterAcquireFailure" value="${c3p0.breakAfterAcquireFailure}" />
+		<property name="idleConnectionTestPeriod" value="${c3p0.idleConnectionTestPeriod}" />
+	</bean>
+	
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref local="dataSource" />
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>hbmFiles/Sucursal.hbm.xml</value>
+				<value>hbmFiles/Empleado.hbm.xml</value>
+				<value>hbmFiles/Cliente.hbm.xml</value>
+				<value>hbmFiles/Usuario.hbm.xml</value>
+				<value>hbmFiles/Role.hbm.xml</value>
+				<value>hbmFiles/Producto.hbm.xml</value>
+				<value>hbmFiles/Proveedor.hbm.xml</value>
+				<value>hbmFiles/Vehiculo.hbm.xml</value>
+				<value>hbmFiles/Servicio.hbm.xml</value>
+				<value>hbmFiles/Revision.hbm.xml</value>
+				<value>hbmFiles/Cotizacion.hbm.xml</value>
+				<value>hbmFiles/Venta.hbm.xml</value>
+				<value>hbmFiles/VentaProducto.hbm.xml</value>
+				<value>hbmFiles/VentaServicio.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">false</prop>
+				<prop key="hibernate.use_sql_comments">false</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="ventaDao"
+		class="cl.pitstop.hibernateDao.VentaHibernateDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="ventaServicioDao"
+		class="cl.pitstop.hibernateDao.VentaServicioHibernateDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="ventaProductoDao"
+		class="cl.pitstop.hibernateDao.VentaProductoHibernateDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="cotizacionDao"
+		class="cl.pitstop.hibernateDao.CotizacionHibernateDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="revisionDao"
+		class="cl.pitstop.hibernateDao.RevisionHibernateDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="servicioDao"
+		class="cl.pitstop.hibernateDao.ServicioHibernateDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="vehiculoDao"
+		class="cl.pitstop.hibernateDao.VehiculoHibernateDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="empleadoDao"
+		class="cl.pitstop.hibernateDao.EmpleadoHibernateDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="productoDao"
+		class="cl.pitstop.hibernateDao.ProductoHibernateDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="sucursalDao" 
+		class="cl.pitstop.hibernateDao.SucursalHibernateDao">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="usuarioDao" 
+		class="cl.pitstop.hibernateDao.UsuarioHibernateDao">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="clienteDao" 
+		class="cl.pitstop.hibernateDao.ClienteHibernateDao">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="roleDao" 
+		class="cl.pitstop.hibernateDao.RoleHibernateDao">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="proveedorDao" 
+		class="cl.pitstop.hibernateDao.ProveedorHibernateDao">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="EmpleadoAction"
+		class="cl.pitstop.action.EmpleadoAction">
+		<property name="empleadoDao" ref="empleadoDao" />
+	</bean>
+    
+</beans>

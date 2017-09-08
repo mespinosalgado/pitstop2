@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ingresoVehiculo" pageWidth="612" pageHeight="792" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8c9e6e54-f708-43f9-9a01-0b0d7c12fc94">
+	<property name="ireport.zoom" value="1.4641000000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="numero" class="java.lang.String"/>
+	<parameter name="formaPago" class="java.lang.String"/>
+	<parameter name="subTotal" class="java.lang.String"/>
+	<parameter name="descuento" class="java.lang.String"/>
+	<parameter name="total" class="java.lang.String"/>
+	<parameter name="observacion" class="java.lang.String"/>
+	<parameter name="producto1" class="java.lang.String"/>
+	<parameter name="producto2" class="java.lang.String"/>
+	<parameter name="producto3" class="java.lang.String"/>
+	<parameter name="producto4" class="java.lang.String"/>
+	<parameter name="producto5" class="java.lang.String"/>
+	<parameter name="producto6" class="java.lang.String"/>
+	<parameter name="producto7" class="java.lang.String"/>
+	<parameter name="producto8" class="java.lang.String"/>
+	<parameter name="producto9" class="java.lang.String"/>
+	<parameter name="producto10" class="java.lang.String"/>
+	<parameter name="producto11" class="java.lang.String"/>
+	<parameter name="cantidad1" class="java.lang.String"/>
+	<parameter name="cantidad2" class="java.lang.String"/>
+	<parameter name="cantidad3" class="java.lang.String"/>
+	<parameter name="cantidad4" class="java.lang.String"/>
+	<parameter name="cantidad5" class="java.lang.String"/>
+	<parameter name="cantidad6" class="java.lang.String"/>
+	<parameter name="cantidad7" class="java.lang.String"/>
+	<parameter name="cantidad8" class="java.lang.String"/>
+	<parameter name="cantidad9" class="java.lang.String"/>
+	<parameter name="cantidad10" class="java.lang.String"/>
+	<parameter name="cantidad11" class="java.lang.String"/>
+	<parameter name="precio1" class="java.lang.String"/>
+	<parameter name="precio2" class="java.lang.String"/>
+	<parameter name="precio3" class="java.lang.String"/>
+	<parameter name="precio4" class="java.lang.String"/>
+	<parameter name="precio5" class="java.lang.String"/>
+	<parameter name="precio6" class="java.lang.String"/>
+	<parameter name="precio7" class="java.lang.String"/>
+	<parameter name="precio8" class="java.lang.String"/>
+	<parameter name="precio9" class="java.lang.String"/>
+	<parameter name="precio10" class="java.lang.String"/>
+	<parameter name="precio11" class="java.lang.String"/>
+	<parameter name="total1" class="java.lang.String"/>
+	<parameter name="total2" class="java.lang.String"/>
+	<parameter name="total3" class="java.lang.String"/>
+	<parameter name="total4" class="java.lang.String"/>
+	<parameter name="total5" class="java.lang.String"/>
+	<parameter name="total6" class="java.lang.String"/>
+	<parameter name="total7" class="java.lang.String"/>
+	<parameter name="total8" class="java.lang.String"/>
+	<parameter name="total9" class="java.lang.String"/>
+	<parameter name="total10" class="java.lang.String"/>
+	<parameter name="total11" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="752">
+			<image>
+				<reportElement x="0" y="0" width="572" height="752" uuid="7a8908cd-508f-4f3a-89f4-33c2c333d269"/>
+				<imageExpression><![CDATA["http://localhost:8080/pitstop/resources/img/reporteVentaCotiza.jpg"]]></imageExpression>
+			</image>
+			<textField isBlankWhenNull="true">
+				<reportElement x="51" y="184" width="175" height="15" uuid="287fbc5d-21ec-4fab-97cb-586b08e19c4f"/>
+				<textFieldExpression><![CDATA[$P{producto1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="51" y="200" width="175" height="15" uuid="b28096da-0a4f-42f7-918b-0271dce6dc14"/>
+				<textFieldExpression><![CDATA[$P{producto2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="51" y="232" width="175" height="15" uuid="f9e9ab1e-47e8-47bc-b1b9-24aeb5210e47"/>
+				<textFieldExpression><![CDATA[$P{producto4}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="51" y="217" width="175" height="15" uuid="f90d1667-b6ed-4301-9152-569a01157e3f"/>
+				<textFieldExpression><![CDATA[$P{producto3}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="51" y="295" width="175" height="15" uuid="f0e567ca-37c6-4fec-9d83-dc9cc094438d"/>
+				<textFieldExpression><![CDATA[$P{producto8}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="51" y="263" width="175" height="15" uuid="91446ff3-c6d9-4252-a332-8286eecf03fb"/>
+				<textFieldExpression><![CDATA[$P{producto6}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="51" y="280" width="175" height="15" uuid="946c8fa8-5410-4b73-8db0-c921c4b9ac2c"/>
+				<textFieldExpression><![CDATA[$P{producto7}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="51" y="247" width="175" height="15" uuid="cc6aa7c2-1c81-4864-8745-3a1a62d7af61"/>
+				<textFieldExpression><![CDATA[$P{producto5}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="51" y="344" width="175" height="15" uuid="adf18af7-53f9-4f05-8738-4dff4e89fff6"/>
+				<textFieldExpression><![CDATA[$P{producto11}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="51" y="312" width="175" height="15" uuid="4b5a914d-4b40-4f8b-8dc0-bbd46d0bbc12"/>
+				<textFieldExpression><![CDATA[$P{producto9}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="51" y="329" width="175" height="15" uuid="82ed2021-3e6e-415a-889c-09e58c283804"/>
+				<textFieldExpression><![CDATA[$P{producto10}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="234" y="184" width="84" height="15" uuid="b75f260c-e751-4fa7-971f-1f2b44a9448a"/>
+				<textFieldExpression><![CDATA[$P{cantidad1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="234" y="200" width="84" height="15" uuid="6994c249-2d29-4deb-8c8a-22f73db1a323"/>
+				<textFieldExpression><![CDATA[$P{cantidad2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="234" y="215" width="84" height="15" uuid="775c26e2-41cd-4201-b2d0-3522e0bcadfc"/>
+				<textFieldExpression><![CDATA[$P{cantidad3}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="234" y="231" width="84" height="15" uuid="82958d6f-752d-4fa8-bdca-b7dc4331eadd"/>
+				<textFieldExpression><![CDATA[$P{cantidad4}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="234" y="280" width="84" height="15" uuid="60736b6b-fd18-4d35-8b85-131fd5a8ed3a"/>
+				<textFieldExpression><![CDATA[$P{cantidad7}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="234" y="248" width="84" height="15" uuid="d2399a4c-37bd-44bc-8796-73a60f794692"/>
+				<textFieldExpression><![CDATA[$P{cantidad5}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="234" y="296" width="84" height="15" uuid="b38daf9d-069f-4e92-878c-013495241b7e"/>
+				<textFieldExpression><![CDATA[$P{cantidad8}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="234" y="264" width="84" height="15" uuid="3acd03a5-5db8-455f-9939-26f50bc7787a"/>
+				<textFieldExpression><![CDATA[$P{cantidad6}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="234" y="328" width="84" height="15" uuid="f911ea27-e38e-4a17-9aae-1beddbd29c8e"/>
+				<textFieldExpression><![CDATA[$P{cantidad10}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="234" y="313" width="84" height="15" uuid="a5bc29c2-603d-4365-b504-9e98d36b7daa"/>
+				<textFieldExpression><![CDATA[$P{cantidad9}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="234" y="345" width="84" height="15" uuid="f98d1748-9986-48ab-9a51-01d3a168cc46"/>
+				<textFieldExpression><![CDATA[$P{cantidad11}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="338" y="184" width="100" height="15" uuid="c39659a5-70fc-417a-9cc1-6e27ff0bfaa5"/>
+				<textFieldExpression><![CDATA[$P{precio1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="338" y="200" width="100" height="15" uuid="be03fc5b-76d6-40dd-8ff6-24661e5c3e90"/>
+				<textFieldExpression><![CDATA[$P{precio2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="338" y="215" width="100" height="15" uuid="776bff6b-fad1-440d-9ffc-31ec8f0dead8"/>
+				<textFieldExpression><![CDATA[$P{precio3}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="338" y="231" width="100" height="15" uuid="33bf9cae-c655-49f7-a531-08d2573a7daf"/>
+				<textFieldExpression><![CDATA[$P{precio4}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="338" y="248" width="100" height="15" uuid="58841af8-3fa5-4d7b-9345-ee07993c7c67"/>
+				<textFieldExpression><![CDATA[$P{precio5}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="338" y="280" width="100" height="15" uuid="e64104db-6211-4555-b759-9af71d894aa1"/>
+				<textFieldExpression><![CDATA[$P{precio7}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="338" y="296" width="100" height="15" uuid="36412ce8-d789-4731-8bfd-801a04af27d9"/>
+				<textFieldExpression><![CDATA[$P{precio8}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="338" y="265" width="100" height="15" uuid="370c7ae7-6fbd-4e70-b29d-a06d415ac6c5"/>
+				<textFieldExpression><![CDATA[$P{precio6}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="338" y="329" width="100" height="15" uuid="7d914717-4bfb-4d35-8fe0-f7ab5c6e3468"/>
+				<textFieldExpression><![CDATA[$P{precio10}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="338" y="313" width="100" height="15" uuid="65d6d530-7831-47b5-8431-05d86badbfbf"/>
+				<textFieldExpression><![CDATA[$P{precio9}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="338" y="345" width="100" height="15" uuid="8494e5c6-59c7-4159-80b8-668122e595ba"/>
+				<textFieldExpression><![CDATA[$P{precio11}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="453" y="184" width="81" height="15" uuid="c071bad2-aee1-4195-b96e-ce6875c4d9ea"/>
+				<textFieldExpression><![CDATA[$P{total1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="453" y="200" width="81" height="15" uuid="e1b77879-de62-40d6-bad1-746f4709464c"/>
+				<textFieldExpression><![CDATA[$P{total2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="453" y="231" width="81" height="15" uuid="7f10c106-f1c1-400f-8afe-2f70faf781c6"/>
+				<textFieldExpression><![CDATA[$P{total4}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="453" y="215" width="81" height="15" uuid="057c0467-f7c4-4081-ad22-314aaaf2667b"/>
+				<textFieldExpression><![CDATA[$P{total3}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="453" y="281" width="81" height="15" uuid="22d00632-0154-44f5-a5e8-7cc55ce53b38"/>
+				<textFieldExpression><![CDATA[$P{total7}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="453" y="265" width="81" height="15" uuid="c6553827-2c52-4ec2-a70d-dbe06d2f8158"/>
+				<textFieldExpression><![CDATA[$P{total6}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="453" y="248" width="81" height="15" uuid="f66a61eb-14a8-414a-8a6c-64a76985ed3e"/>
+				<textFieldExpression><![CDATA[$P{total5}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="453" y="296" width="81" height="15" uuid="8a792956-e5c9-46f0-8b5c-f3eb1866ce56"/>
+				<textFieldExpression><![CDATA[$P{total8}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="453" y="329" width="81" height="15" uuid="67728d98-043e-4f21-a158-1ab243b4ed94"/>
+				<textFieldExpression><![CDATA[$P{total10}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="453" y="313" width="81" height="15" uuid="eabfb1c8-b1fc-41db-9bc4-bb91285d99bd"/>
+				<textFieldExpression><![CDATA[$P{total9}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="453" y="345" width="81" height="15" uuid="0f9b676f-9530-444d-8793-f857e7325cc4"/>
+				<textFieldExpression><![CDATA[$P{total11}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="399" y="69" width="100" height="16" uuid="8b02f4ef-8e28-49bf-8277-efbcc4deb26f"/>
+				<textFieldExpression><![CDATA[$P{numero}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="148" y="116" width="114" height="17" uuid="706c1aba-c78f-4929-ba37-fb6178aa0d07"/>
+				<textFieldExpression><![CDATA[$P{formaPago}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="467" y="372" width="100" height="20" uuid="80f960d3-f4d9-43be-aec1-9942337f4776"/>
+				<textFieldExpression><![CDATA[$P{subTotal}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="467" y="392" width="100" height="20" uuid="d170c9c2-7600-40e9-9f51-a95aca24bf70"/>
+				<textFieldExpression><![CDATA[$P{descuento}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="467" y="425" width="100" height="20" uuid="6b06be01-2caf-4410-b933-e03d2ae372f2"/>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="115" y="469" width="338" height="102" uuid="44b83982-a9ba-4281-9fbe-56bb3162545e"/>
+				<textFieldExpression><![CDATA[$P{observacion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+</jasperReport>

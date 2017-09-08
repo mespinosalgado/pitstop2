@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class name="cl.pitstop.pojos.Revision" lazy="true"
+		dynamic-update="true" select-before-update="true" dynamic-insert="true"
+		table="revision">
+		<id name="id" column="id">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="empleado" class="cl.pitstop.pojos.Empleado" fetch="select">
+            <column name="id_empleado" precision="8" scale="0">
+                <comment>id empleado</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="vehiculo" class="cl.pitstop.pojos.Vehiculo" fetch="select">
+            <column name="id_vehiculo" precision="8" scale="0">
+                <comment>id vehiculo</comment>
+            </column>
+        </many-to-one>
+		<property name="observacion" column="observacion" />
+		<property name="fecha" column="fecha_revision" />
+		<property name="hora" column="hora" />
+		<property name="aprobacion" column="aprobacion" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class name="cl.pitstop.pojos.Usuario" lazy="true"
+		dynamic-update="true" select-before-update="true" dynamic-insert="true"
+		table="usuario">
+		<id name="id" column="id">
+			<generator class="identity" />
+		</id>
+		<many-to-one name="role" class="cl.pitstop.pojos.Role" fetch="select">
+            <column name="id_role" precision="8" scale="0">
+                <comment>id role</comment>
+            </column>
+        </many-to-one>
+		<many-to-one name="empleado" class="cl.pitstop.pojos.Empleado" fetch="select">
+            <column name="id_empleado" precision="8" scale="0">
+                <comment>id empleado</comment>
+            </column>
+        </many-to-one>
+		<property name="userName" unique="true" column="user_name" />
+		<property name="password" column="password" />
+
+	</class>
+</hibernate-mapping>
